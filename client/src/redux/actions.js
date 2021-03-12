@@ -1,14 +1,11 @@
 import { 
 	FETCH_STATUS,
-	ADD_PERSON,
-	POP_UP_STATUS,
-	SET_POP_UP_PERSON,
-	SET_CHARACTER_DATA,
-	DELETE_ALL_PEOPLE,
-	SET_PLANET,
-	SET_STARSHIP,
-	SET_VEHICLE,
-	DELETE_FETCHED_DATA
+	SET_ALL_ELEMENTS,
+	SET_CURRENT_PAGE_ELEMENTS,
+	SET_ELEMENTS_PER_PAGE,
+	SET_OFFSET,
+	SET_PAGES_COUNT,
+	SET_TOTAL_ELEMENTS_COUNT
 } from './types';
 import axios from "axios";
 
@@ -19,17 +16,57 @@ export function setFetchStatus(status) {
 	}
 }
 
-export function deleteAllPeople() {
+export function setOffset(offset) {
 	return {
-		type: DELETE_ALL_PEOPLE
+		type: SET_OFFSET,
+		payload: offset
 	}
 }
 
-export function deleteFetchedData() {
+export function setCurrentPageElements(elements) {
 	return {
-		type: DELETE_FETCHED_DATA
+		type: SET_CURRENT_PAGE_ELEMENTS,
+		payload: elements
 	}
 }
+
+export function setElementsPerPage(amount) {
+	return {
+		type: SET_ELEMENTS_PER_PAGE,
+		payload: amount
+	}
+}
+
+export function setPagesCount(amount) {
+	return {
+		type: SET_PAGES_COUNT,
+		payload: amount
+	}
+}
+
+export function setAllElements(elements) {
+	return {
+		type: SET_ALL_ELEMENTS,
+		payload: elements
+	}
+}
+
+export function setTotalElementsCount(amount) {
+	return {
+		type: SET_TOTAL_ELEMENTS_COUNT,
+		payload: amount
+	}
+}
+
+
+
+
+
+
+
+
+
+
 
 export function addPerson(person) {
 	if (person) {
@@ -60,7 +97,7 @@ export function addPeople(people) {
 	}
 }
 
-export function fetchGetAllPeople() {
+export function fetchGetAllData() {
 	return async (dispatch) => {
 		try {
 			await dispatch(setFetchStatus(true));

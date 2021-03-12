@@ -8,25 +8,29 @@ import {
 	SET_PLANET,
 	SET_STARSHIP,
 	SET_VEHICLE,
-	DELETE_FETCHED_DATA
+	DELETE_FETCHED_DATA,
+	SET_OFFSET,
+	SET_CURRENT_PAGE_ELEMENTS,
+	SET_ELEMENTS_PER_PAGE,
+	SET_PAGES_COUNT,
+	SET_ALL_ELEMENTS,
+	SET_TOTAL_ELEMENTS_COUNT
 } from "./types";
 
 const initialState = {
-	people: [],
+	offset: 0,
 
-	fetchStatus: false,
+	currentPageElements: [],
 
-	popUpStatus: false,
+	elementsPerPage: 15,
 
-	poppedUpPerson: false,
+	pagesCount: 1,
 
-	characterData: false,
+	allElements: [],
 
-	fetchedPlanet: [],
+	totalElementsCount: 0,
 
-	fetchedStarships: [],
-
-	fetchedVehicles: []
+	fetchStatus: false
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -39,18 +43,21 @@ const rootReducer = (state = initialState, action) => {
 			return { ...state, fetchedPlanet: [], fetchedStarships: [], fetchedVehicles: [] };
 		case POP_UP_STATUS:
 			return { ...state, popUpStatus: action.payload };
-		case SET_POP_UP_PERSON:
-			return { ...state, poppedUpPerson: action.payload };
-		case SET_CHARACTER_DATA:
-			return { ...state, characterData: action.payload };
+
+		case SET_OFFSET:
+			return { ...state, offset: action.payload };
+		case SET_CURRENT_PAGE_ELEMENTS:
+			return { ...state, currentPageElements: [ ...state.currentPageElements, action.payload ] };
 		case FETCH_STATUS:
 			return { ...state, fetchStatus: action.payload };
-		case SET_PLANET:
-			return { ...state, fetchedPlanet : state.fetchedPlanet.concat([action.payload]) };
-		case SET_STARSHIP:
-			return { ...state, fetchedStarships : state.fetchedStarships.concat([action.payload]) };
-		case SET_VEHICLE:
-			return { ...state, fetchedVehicles : state.fetchedVehicles.concat([action.payload]) };
+		case SET_ELEMENTS_PER_PAGE:
+			return { ...state, elementsPerPage : action.payload };
+		case SET_PAGES_COUNT:
+			return { ...state, pagesCount : action.payload };
+		case SET_ALL_ELEMENTS:
+			return { ...state, allElements : [ ...state.allElements, action.payload ] };
+		case SET_TOTAL_ELEMENTS_COUNT:
+			return { ...state, totalElementsCount : action.payload };
 		default: return state
 	}
 }
