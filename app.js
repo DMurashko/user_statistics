@@ -1,72 +1,65 @@
-import express, { json, urlencoded } from 'express';
-import path from 'path';
+import express, {json, urlencoded} from 'express';
 import cors from 'cors';
 import logger from 'morgan';
 import indexRouter from './routes/index.js';
 import usersRouter from './routes/users.js';
-import fs from 'fs';
-import JSONStream from 'JSONStream';
-import es from "event-stream";
 import sqlite3 from 'sqlite3';
 import config from 'config';
-import { createServer } from 'http';
-import { dbInitialize } from './src/dbQueries.js';
-import dbCheck from './src/dbCheck.js';
-import { onError } from './src/serverStart.js';
-import { normalizePort } from './src/serverStart.js';
+import dbFiller from './src/dbFiller.js';
+import {createServer} from 'http';
+import {dbInitialize} from './src/dbQueries.js';
+import {onError} from './src/serverStart.js';
+import {normalizePort} from './src/serverStart.js';
 
 const db = new sqlite3.Database('./database.sqlite');
-
 const app = express();
-
 const PORT = normalizePort(config.get('port') || 3001);
-app.set('port', PORT);
-
 const server = createServer(app);
+
+app.set('port', PORT);
 
 app.use(logger('dev'));
 app.use(json());
-app.use(urlencoded({ extended: false }));
-app.use(cors());
-//app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(urlencoded({extended: false}));
+app.use(cors(null));
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
+//app.use(express.static(path.join(__dirname, 'public')));
 
 //for testing purpose
 async function test() {
-	setTimeout(() => {
-		db.all(`SELECT COUNT(*) FROM UserStatistics`, (error, data) => {
-			if (error) {
-				console.error;
-			} else {
-				console.log(data);
-			}
-		});
-		db.all(`SELECT COUNT(*) FROM Users`, (error, data) => {
-			if (error) {
-				console.error;
-			} else {
-				console.log(data);
-			}
-		});
-	}, 3000);
+  setTimeout(() => {
+    db.all('SELECT COUNT(*) FROM users_statistic', (error, data) => {
+      if (error) {
+        console.error();
+      } else {
+        console.log(data);
+      }
+    });
+    db.all('SELECT COUNT(*) FROM users', (error, data) => {
+      if (error) {
+        console.error();
+      } else {
+        console.log(data);
+      }
+    });
+  }, 3000);
 }
 
 async function start() {
-	try {
-		await dbInitialize(() => {
-			dbCheck('./users.json', fs, JSONStream, es, db, () => {
-				dbCheck('./users_statistic.json', fs, JSONStream, es, db);
-			});
-		});
-		server.listen(process.env.PORT || PORT, () => console.log(`Lisening on port :${PORT}`));
-	} catch (e) {
-		console.log('Server Error', e.message);
-		onError(e, PORT);
-	}
+  try {
+    await dbInitialize(async () => {
+      const df = new dbFiller();
+
+      await df.dbCheck(df.USERS_PATH, db);
+      await df.dbCheck(df.USERS_STATISTIC_PATH, db);
+    });
+    server.listen(process.env.PORT || PORT, () => console.log(`Lisening on port :${PORT}`));
+  } catch (e) {
+    console.log('Server Error', e.message);
+    onError(e, PORT);
+  }
 }
 
 await start();
-
 await test();
