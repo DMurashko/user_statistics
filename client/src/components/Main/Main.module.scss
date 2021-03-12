@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+//variables
+$side-padding: 9.02777777vw;
+$property-width: 26.388888888vw;
+$property-height: 22.430555554799998vw;
+$icon-width: 7.361111111111111vw;
+$icon-height: 6.666666666666667vw;
+$icon-margin: 12.38390092879257%;
+$property-title-margin: 4.953560371517028%;
+$property-inner-width: 83.15789473684211%;
+$search-bar-width: 40.208333333333335vw;
+$first-font-size: 39px;
+$second-font-size: 32.5px;
+$third-font-size: 26px;
+$fourth-font-size: 19.5px;
+$fifth-font-size: 16.25px;
+$sixth-font-size: 13px;
+
+.Main {
+	position: relative;
+	width: 100vw;
+	height: 1503px;
+
+	background: #FFFFFF;
+
+	header{
+		height: 100%;
+		width: 100vw;
+		left: 0px;
+		top: 0px;
+		border-radius: 0px;
+		padding-left: $side-padding;
+
+		background: url('../../images/Rectangle\ 8.jpg');
+		background-size: 100vw auto;
+		background-repeat: no-repeat;
+
+		.title{
+			position: absolute;
+			width: 136px;
+			height: 49px;
+			top: 24px;
+
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: normal;
+			font-size: $second-font-size;
+			line-height: 49px;
+
+			color: #FFFFFF;
+		}
+
+		.slogan{
+			position: absolute;
+			width: 586px;
+			height: 118px;
+			top: 121px;
+
+			font-family: Montserrat;
+			font-size: $first-font-size;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 59px;
+			letter-spacing: 0em;
+			text-align: left;
+
+
+			color: #FFFFFF;
+
+			b{
+				font-weight: 700;
+			}
+		}
+
+		.description{
+			position: absolute;
+			width: 580px;
+			height: 56px;
+			top: 263px;
+
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: normal;
+			font-size: $fifth-font-size;
+			line-height: 142%;
+
+			color: #FFFFFF;
+		}
+
+		.button{
+			position: absolute;
+			width: 154px;
+			height: 56px;
+			top: 351px;
+
+			background: #FFFFFF;
+			border-radius: 8px;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.content{
+				width: 91px;
+				height: 23px;
+				font-family: Montserrat;
+				font-style: normal;
+				font-weight: normal;
+				font-size: $sixth-font-size;
+				line-height: 142%;
+
+				text-align: center;
+
+				color: #3A80BA;
+			}
+		}
+
+		.picture{
+			position: absolute;
+			width: 321px;
+			height: 561px;
+			top: 72px;
+			left: 63.1944vw;
+		}
+	}
+
+	.centeredContainer{
+		padding: 0 $side-padding;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.question{
+			width: 580px;
+			height: 78px;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: 400;
+			font-size: $third-font-size;
+			line-height: 39px;
+			text-align: center;
+			margin-bottom: 24px;
+
+			b{
+				font-weight: 700;
+			}
+		}
+
+		.secondDescription{
+			width: 780px;
+			height: 56px;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: normal;
+			font-size: $fifth-font-size;
+			line-height: 142%;
+			text-align: center;
+			margin-bottom: 40px;
+
+			color: #7E7E7E;
+		}
+
+		.propertiesContainer{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 128px;
+			width: 100%;
+
+			.property{
+				width: $property-width;
+				height: $property-height;
+				display: grid;
+				place-items: center center;
+
+				background: #FFFFFF;
+				box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+				border-radius: $third-font-size;
+
+				.propertyInnerContainer{
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: $property-inner-width;
+
+					.propertyPicture{
+						width: $icon-width;
+						height: $icon-height;
+						margin-bottom: $icon-margin;
+					}
+	
+					.propertyTitle{
+						font-family: Montserrat;
+						font-size: $fourth-font-size;
+						font-style: normal;
+						font-weight: 600;
+						line-height: 29px;
+						letter-spacing: 0em;
+						text-align: center;
+						margin-bottom: 32px;
+	
+						color: #1A1A1A;
+					}
+	
+					.propertyDescription{
+						width: 100%;
+						font-family: Montserrat;
+						font-style: normal;
+						font-weight: 400;
+						font-size: $sixth-font-size;
+						line-height: 142%;
+						text-align: center;
+	
+						color: #7E7E7E;
+					}
+				}
+			}
+		}
+	}
+
+	footer{
+		padding: 20px $side-padding 0 $side-padding;
+		height: 122px;
+
+		background: url('../../images/footer.svg');
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		.searchBarContainer{
+			display: flex;
+			justify-content: center;
+			height: 40%;
+
+			.searchBar{
+				width: $search-bar-width;
+				background: #FFFFFF;
+				box-sizing: border-box;
+				border: 1px solid #F1F1F1;
+				border-radius: 10px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				input{
+					border: 0 none;
+					border-radius: 10px;
+					font-family: Montserrat;
+					font-style: normal;
+					font-weight: normal;
+					font-size: $sixth-font-size;
+					line-height: 162%;
+					padding-left: 19px;
+
+					display: flex;
+					align-items: center;
+
+					color: #B9B9B9;
+				}
+
+				button{
+					background: #3A80BA;
+					border: none;
+					border-radius: 8px;
+					height: 90%;
+					width: 30.397236%;
+					padding: 15px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					margin-right: 2px;
+
+					font-family: Montserrat;
+					font-style: normal;
+					font-weight: normal;
+					font-size: $sixth-font-size;
+
+					color: #FFFFFF;
+				}
+			}
+		}
+
+		.bottomContainer{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 6.5vw;
+
+			.bottomTitle{
+				font-family: Montserrat;
+				font-style: normal;
+				font-weight: normal;
+				font-size: $fifth-font-size;
+				line-height: 39px;
+
+				color: #FFFFFF;
+			}
+
+			.bottomDisclaimer{
+				font-family: Montserrat;
+				font-style: normal;
+				font-weight: normal;
+				font-size: $sixth-font-size;
+				line-height: 142%;
+
+				text-align: center;
+
+				color: #FFFFFF;
+			}
+
+			.bottomCopyright{
+				font-family: Montserrat;
+				font-style: normal;
+				font-weight: normal;
+				font-size: $sixth-font-size;
+				line-height: 142%;
+
+				text-align: center;
+
+				color: #FFFFFF;
+			}
+		}
+	}
+}

@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Environment
+
+Use Node.js 15.1.0 to successfully start the project.
+
 ## Available Scripts
 
 In the project directory, you can run:

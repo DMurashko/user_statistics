@@ -1,0 +1,10 @@
+export const SET_CHARACTER_DATA = 'SET_CHARACTER_DATA';
+export const FETCH_STATUS = 'FETCH_STATUS';
+export const ADD_PERSON = 'ADD_PERSON';
+export const POP_UP_STATUS = 'POP_UP_STATUS';
+export const SET_POP_UP_PERSON = 'SET_POP_UP_PERSON';
+export const DELETE_ALL_PEOPLE = 'DELETE_ALL_PEOPLE';
+export const DELETE_FETCHED_DATA = 'DELETE_FETCHED_DATA';
+export const SET_PLANET = 'SET_PLANET';
+export const SET_STARSHIP = 'SET_STARSHIP';
+export const SET_VEHICLE = 'SET_VEHICLE';
