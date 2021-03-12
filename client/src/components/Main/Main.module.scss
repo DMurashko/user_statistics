@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
+@import '../../css/variables.scss';
 //variables
 $side-padding: 9.02777777vw;
 $property-width: 26.388888888vw;
@@ -10,12 +10,7 @@ $icon-margin: 12.38390092879257%;
 $property-title-margin: 4.953560371517028%;
 $property-inner-width: 83.15789473684211%;
 $search-bar-width: 40.208333333333335vw;
-$first-font-size: 39px;
-$second-font-size: 32.5px;
-$third-font-size: 26px;
-$fourth-font-size: 19.5px;
-$fifth-font-size: 16.25px;
-$sixth-font-size: 13px;
+
 
 .Main {
 	position: relative;
@@ -30,6 +25,7 @@ $sixth-font-size: 13px;
 		top: 0px;
 		border-radius: 0px;
 		padding-left: $side-padding;
+		margin-bottom: 16px;
 
 		background: url('../../images/Rectangle\ 8.jpg');
 		background-size: 100vw auto;
@@ -276,47 +272,6 @@ $sixth-font-size: 13px;
 
 					color: #FFFFFF;
 				}
-			}
-		}
-
-		.bottomContainer{
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			height: 6.5vw;
-
-			.bottomTitle{
-				font-family: Montserrat;
-				font-style: normal;
-				font-weight: normal;
-				font-size: $fifth-font-size;
-				line-height: 39px;
-
-				color: #FFFFFF;
-			}
-
-			.bottomDisclaimer{
-				font-family: Montserrat;
-				font-style: normal;
-				font-weight: normal;
-				font-size: $sixth-font-size;
-				line-height: 142%;
-
-				text-align: center;
-
-				color: #FFFFFF;
-			}
-
-			.bottomCopyright{
-				font-family: Montserrat;
-				font-style: normal;
-				font-weight: normal;
-				font-size: $sixth-font-size;
-				line-height: 142%;
-
-				text-align: center;
-
-				color: #FFFFFF;
 			}
 		}
 	}

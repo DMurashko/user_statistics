@@ -3,6 +3,7 @@ import mobile from '../../images/mobile.svg';
 import group1 from "../../images/Group 1.svg";
 import group2 from "../../images/Group 2.svg";
 import group3 from "../../images/Group 3.svg";
+import Footer from "../Footer/Footer";
 
 export default function Main() {
 	return (
@@ -83,11 +84,7 @@ export default function Main() {
 						</button>
 					</div>
 				</div>
-				<div className={Styles.bottomContainer}>
-					<div className={Styles.bottomTitle}>AppCo</div>
-					<div className={Styles.bottomDisclaimer}>All rights reserved by ThemeTags</div>
-					<div className={Styles.bottomCopyright}>Copyrights © 2019.</div>
-				</div>
+				<Footer />
 			</footer>
 		</div>
 	);
