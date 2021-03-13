@@ -18,14 +18,15 @@ export default function Stats() {
 			<Pagination 
 				defaultCurrent={1}
 				total={120}
-				showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
-				pageSize={20}
+				//showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
+				//pageSize={20}
 				showSizeChanger={false}
-				className={PageStyles.main}
+				className={Styles.pages}
 			/>
 			<footer>
 				<Footer />
 			</footer>
+			<Pagination defaultCurrent={1} total={50} />
 		</div>
 	);
 }
