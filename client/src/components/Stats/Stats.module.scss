@@ -1,4 +1,4 @@
-@import '../../css/variables.scss';
+@import '../../css/global-variables.scss';
 
 .stats{
 	height: 100vh;
@@ -19,16 +19,12 @@
 			justify-content: center;
 			align-items: center;
 
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: normal;
 			font-size: $sixth-font-size;
-			line-height: 20px;
 
 			color: #1A1A1A;
 		}
 
-		li > .ant-pagination-item-active{
+		.ant-pagination-item-active{
 			background: #3A80BA;
 			border-radius: 8px;
 

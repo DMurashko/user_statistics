@@ -1,4 +1,4 @@
-@import '../../css/variables.scss';
+@import '../../css/global-variables.scss';
 
 .bottomContainer{
 	display: flex;
@@ -7,31 +7,13 @@
 	height: 6.5vw;
 
 	.bottomTitle{
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: normal;
 		font-size: $fifth-font-size;
 		line-height: 39px;
 
 		color: #FFFFFF;
 	}
 
-	.bottomDisclaimer{
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: normal;
-		font-size: $sixth-font-size;
-		line-height: 142%;
-
-		text-align: center;
-
-		color: #FFFFFF;
-	}
-
-	.bottomCopyright{
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: normal;
+	.bottomDisclaimer, .bottomCopyright{
 		font-size: $sixth-font-size;
 		line-height: 142%;
 

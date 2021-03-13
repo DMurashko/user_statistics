@@ -26,7 +26,6 @@ export default function Stats() {
 			<footer>
 				<Footer />
 			</footer>
-			<Pagination defaultCurrent={1} total={50} />
 		</div>
 	);
 }

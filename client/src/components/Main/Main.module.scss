@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import '../../css/variables.scss';
-//variables
-$side-padding: 9.02777777vw;
-$property-width: 26.388888888vw;
-$property-height: 22.430555554799998vw;
-$icon-width: 7.361111111111111vw;
-$icon-height: 6.666666666666667vw;
-$icon-margin: 12.38390092879257%;
-$property-title-margin: 4.953560371517028%;
-$property-inner-width: 83.15789473684211%;
-$search-bar-width: 40.208333333333335vw;
+@import '../../css/global-variables.scss';
+
+//local variables
+$side-padding: 9.03vw;
+$property-width: 26.39vw;
+$property-height: 22.43vw;
+$icon-width: 7.36vw;
+$icon-height: 6.67vw;
+$icon-margin: 12.38%;
+$property-title-margin: 4.95%;
+$property-inner-width: 83.16%;
+$search-bar-width: 40.21vw;
 
 
 .Main {
@@ -25,6 +26,7 @@ $search-bar-width: 40.208333333333335vw;
 		top: 0px;
 		border-radius: 0px;
 		padding-left: $side-padding;
+		padding-top: 1.67vw;
 		margin-bottom: 16px;
 
 		background: url('../../images/Rectangle\ 8.jpg');
@@ -32,36 +34,17 @@ $search-bar-width: 40.208333333333335vw;
 		background-repeat: no-repeat;
 
 		.title{
-			position: absolute;
-			width: 136px;
-			height: 49px;
-			top: 24px;
-
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: normal;
 			font-size: $second-font-size;
-			line-height: 49px;
-
 			color: #FFFFFF;
+			margin-bottom: 3.33vw;
 		}
 
 		.slogan{
-			position: absolute;
-			width: 586px;
-			height: 118px;
-			top: 121px;
-
-			font-family: Montserrat;
+			width: 40.7vw;
 			font-size: $first-font-size;
-			font-style: normal;
-			font-weight: 400;
-			line-height: 59px;
-			letter-spacing: 0em;
 			text-align: left;
-
-
 			color: #FFFFFF;
+			margin-bottom: 1.67vw;
 
 			b{
 				font-weight: 700;
@@ -69,44 +52,24 @@ $search-bar-width: 40.208333333333335vw;
 		}
 
 		.description{
-			position: absolute;
-			width: 580px;
-			height: 56px;
-			top: 263px;
-
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: normal;
+			width: 40.27vw;
 			font-size: $fifth-font-size;
-			line-height: 142%;
-
 			color: #FFFFFF;
+			margin-bottom: 2.22vw;
 		}
 
 		.button{
-			position: absolute;
-			width: 154px;
-			height: 56px;
-			top: 351px;
-
+			width: 10.7vw;
+			height: 3.89vw;
 			background: #FFFFFF;
 			border-radius: 8px;
-
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
 			.content{
-				width: 91px;
-				height: 23px;
-				font-family: Montserrat;
-				font-style: normal;
-				font-weight: normal;
 				font-size: $sixth-font-size;
-				line-height: 142%;
-
 				text-align: center;
-
 				color: #3A80BA;
 			}
 		}
@@ -115,7 +78,7 @@ $search-bar-width: 40.208333333333335vw;
 			position: absolute;
 			width: 22.3vw;
 			height: 85.648%;
-			top: 72px;
+			top: 5vw;
 			left: 63.1944vw;
 		}
 	}
@@ -127,13 +90,8 @@ $search-bar-width: 40.208333333333335vw;
 		align-items: center;
 
 		.question{
-			width: 580px;
-			height: 78px;
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 400;
+			width: 40.3vw;
 			font-size: $third-font-size;
-			line-height: 39px;
 			text-align: center;
 			margin-bottom: 24px;
 
@@ -143,13 +101,8 @@ $search-bar-width: 40.208333333333335vw;
 		}
 
 		.secondDescription{
-			width: 780px;
-			height: 56px;
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: normal;
+			width: 54.2vw;
 			font-size: $fifth-font-size;
-			line-height: 142%;
 			text-align: center;
 			margin-bottom: 40px;
 
@@ -185,27 +138,18 @@ $search-bar-width: 40.208333333333335vw;
 					}
 	
 					.propertyTitle{
-						font-family: Montserrat;
+						
 						font-size: $fourth-font-size;
-						font-style: normal;
 						font-weight: 600;
-						line-height: 29px;
-						letter-spacing: 0em;
 						text-align: center;
 						margin-bottom: 32px;
-	
 						color: #1A1A1A;
 					}
 	
 					.propertyDescription{
 						width: 100%;
-						font-family: Montserrat;
-						font-style: normal;
-						font-weight: 400;
 						font-size: $sixth-font-size;
-						line-height: 142%;
 						text-align: center;
-	
 						color: #7E7E7E;
 					}
 				}
@@ -215,7 +159,6 @@ $search-bar-width: 40.208333333333335vw;
 
 	footer{
 		padding: 20px $side-padding 0 $side-padding;
-		height: 122px;
 
 		background: url('../../images/footer.svg');
 		background-size: cover;
@@ -239,16 +182,10 @@ $search-bar-width: 40.208333333333335vw;
 				input{
 					border: 0 none;
 					border-radius: 10px;
-					font-family: Montserrat;
-					font-style: normal;
-					font-weight: normal;
 					font-size: $sixth-font-size;
-					line-height: 162%;
 					padding-left: 19px;
-
 					display: flex;
 					align-items: center;
-
 					color: #B9B9B9;
 				}
 
@@ -262,14 +199,8 @@ $search-bar-width: 40.208333333333335vw;
 					display: flex;
 					justify-content: center;
 					align-items: center;
-
 					margin-right: 2px;
-
-					font-family: Montserrat;
-					font-style: normal;
-					font-weight: normal;
 					font-size: $sixth-font-size;
-
 					color: #FFFFFF;
 				}
 			}
